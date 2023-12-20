@@ -1,0 +1,9 @@
+{
+	"name": "Coviiid-19-ADF",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "34b77809-b2c3-44a6-a814-ef7fcccf2714",
+		"tenantId": "c15e6eb5-7bf5-40fe-bdf8-8e70a0b86135"
+	}
+}

@@ -1,0 +1,36 @@
+{
+	"name": "tr_pop_data_arrived",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pl_EXE_Pop_pipe",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "pl_ingest_population",
+					"type": "PipelineReference"
+				}
+			},
+			{
+				"pipelineReference": {
+					"referenceName": "pl_ingest_ecdc_data",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/population/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/caa222f6-d459-49f3-9f6e-e62edcf410a6/resourceGroups/Covid-Reporting-RG/providers/Microsoft.Storage/storageAccounts/covidstorageaccounttt",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

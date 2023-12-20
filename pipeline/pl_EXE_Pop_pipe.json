@@ -1,0 +1,43 @@
+{
+	"name": "pl_EXE_Pop_pipe",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute-ingest-pop-Data",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_ingest_population",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Execute-proces-pop-data",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Execute-ingest-pop-Data",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_population_Data-DB",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-12-20T08:28:37Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
