@@ -1,0 +1,9 @@
+{
+	"name": "testt-ci-cd-demo-adf",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8ac56d15-c7ae-49c7-af07-8cde313a4572",
+		"tenantId": "1b70a6d4-73d5-41c5-995c-66a3feee7c25"
+	}
+}
